@@ -1,0 +1,15 @@
+services:
+  bot:
+    build: .
+    container_name: schedule-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      TZ: Asia/Almaty
+    volumes:
+      # persist users between restarts (users.json is gitignored)
+      - ./users.json:/app/users.json
+      # optional: mount schedule.json if you want to update it without rebuild
+      # - ./schedule.json:/app/schedule.json:ro
+    # no ports needed — Telegram bot uses long polling
