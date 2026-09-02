@@ -1,0 +1,4 @@
+PyMuPDF==1.26.5
+aiogram==3.22.0
+python-dotenv==1.2.1
+APScheduler==3.11.3
